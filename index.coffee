@@ -139,7 +139,7 @@ App.get '/lists', (req, res) ->
 
         results.push(
           title: jQuery(element).text()
-          slug: 
+          slug: slug
           type: type
         )
     )
