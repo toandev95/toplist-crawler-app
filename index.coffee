@@ -132,9 +132,14 @@ App.get '/lists', (req, res) ->
       if (jQuery(element).prop('tagName') == 'DIV')
         ++type
       else if (jQuery(element).text() != '')
+        slug = _.toString(jQuery(element).attr('href')).split('/')[2]
+
+        if (type == 0)
+          slug = _.toString(jQuery(element).attr('href')).split('/')[1]
+
         results.push(
           title: jQuery(element).text()
-          slug: _.toString(jQuery(element).attr('href')).split('/')[2]
+          slug: 
           type: type
         )
     )
